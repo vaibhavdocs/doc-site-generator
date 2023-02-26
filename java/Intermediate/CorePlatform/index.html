@@ -1,0 +1,1819 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../Beginner/ModernJava/">
+      
+      
+        <link rel="next" href="../../../javascript/basics/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.15">
+    
+    
+      
+        <title>CorePlatform - vaibhavdocs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.113286f1.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#java-runtime-environment-language" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="vaibhavdocs" class="md-header__button md-logo" aria-label="vaibhavdocs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            vaibhavdocs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CorePlatform
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="vaibhavdocs" class="md-nav__button md-logo" aria-label="vaibhavdocs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    vaibhavdocs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Algorithms
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Algorithms
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithms/Djikstra/" class="md-nav__link">
+        Djikstra
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Aws
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Aws
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../aws/basic/" class="md-nav__link">
+        Basic
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Azure
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Azure
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../azure/" class="md-nav__link">
+        Azure-Cert
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../azure/azure-dev-ops/" class="md-nav__link">
+        Azure dev ops
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          AZ 204
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          AZ 204
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../azure/AZ-204/Compute_Services/" class="md-nav__link">
+        Compute Services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../azure/AZ-204/Concepts/" class="md-nav__link">
+        Concepts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../azure/AZ-204/Database_Services/" class="md-nav__link">
+        Database Services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../azure/AZ-204/IAC_Service/" class="md-nav__link">
+        IAC Service
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../azure/AZ-204/IAM_Services/" class="md-nav__link">
+        IAM Services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../azure/AZ-204/Links_References/" class="md-nav__link">
+        Links References
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../azure/AZ-204/Logging_Monitoring_Services/" class="md-nav__link">
+        Logging Monitoring Services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../azure/AZ-204/Network_Services/" class="md-nav__link">
+        Network Services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../azure/AZ-204/Other_Services/" class="md-nav__link">
+        Other Services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../azure/AZ-204/Storage_Services/" class="md-nav__link">
+        Storage Services
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          AZ 900
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          AZ 900
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4_1" id="__nav_4_4_1_label" tabindex="0">
+          Module 1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Module 1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../azure/AZ-900/Module%201/core_azure_concepts/" class="md-nav__link">
+        Core azure concepts
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4_2" id="__nav_4_4_2_label" tabindex="0">
+          Module 2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Module 2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../azure/AZ-900/Module%202/core_azure_services/" class="md-nav__link">
+        Core azure services
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4_3" id="__nav_4_4_3_label" tabindex="0">
+          Module 3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Module 3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../azure/AZ-900/Module%203/core_solutions_mgmt_tools/" class="md-nav__link">
+        Core solutions mgmt tools
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4_4" id="__nav_4_4_4_label" tabindex="0">
+          Module 4
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Module 4
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../azure/AZ-900/Module%204/general_security_network_security/" class="md-nav__link">
+        General security network security
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4_5" id="__nav_4_4_5_label" tabindex="0">
+          Module 5
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Module 5
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../azure/AZ-900/Module%205/identity_governance_privacy_compliance/" class="md-nav__link">
+        Identity governance privacy compliance
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4_6" id="__nav_4_4_6_label" tabindex="0">
+          Module 6
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Module 6
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../azure/AZ-900/Module%206/cost_sla/" class="md-nav__link">
+        Cost sla
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Destruct auth
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Destruct auth
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../destruct-auth/authetication-basics/" class="md-nav__link">
+        Authetication basics
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Java
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Java
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+          Beginner
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_1">
+          <span class="md-nav__icon md-icon"></span>
+          Beginner
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Beginner/ClassInterface/" class="md-nav__link">
+        ClassInterface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Beginner/Collection/" class="md-nav__link">
+        Collection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Beginner/GeneralProgramming/" class="md-nav__link">
+        GeneralProgramming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Beginner/ModernJava/" class="md-nav__link">
+        ModernJava
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+          Intermediate
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Intermediate
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          CorePlatform
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        CorePlatform
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#java-runtime-environment-language" class="md-nav__link">
+    Java - Runtime Environment &amp; Language
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-input-and-output-with-streams-and-files" class="md-nav__link">
+    1. Input and Output with Streams and Files
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Input and Output with Streams and Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-streams" class="md-nav__link">
+    1.1 Streams
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-string-formatting-and-regular-expressions" class="md-nav__link">
+    1.2 String Formatting and Regular Expressions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-working-with-collections" class="md-nav__link">
+    1.3 Working with Collections
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-controlling-app-execution-and-environment" class="md-nav__link">
+    1.4 Controlling App Execution and Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-capturing-application-activity-using-the-java-log-system" class="md-nav__link">
+    1.5 Capturing Application Activity using the Java Log System
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-multithreading-and-concurrency" class="md-nav__link">
+    1.6 Multithreading and Concurrency
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Javascript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Javascript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascript/basics/" class="md-nav__link">
+        Basics
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          K8s
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          K8s
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../k8s/basic/" class="md-nav__link">
+        Basic
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#java-runtime-environment-language" class="md-nav__link">
+    Java - Runtime Environment &amp; Language
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-input-and-output-with-streams-and-files" class="md-nav__link">
+    1. Input and Output with Streams and Files
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Input and Output with Streams and Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-streams" class="md-nav__link">
+    1.1 Streams
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-string-formatting-and-regular-expressions" class="md-nav__link">
+    1.2 String Formatting and Regular Expressions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-working-with-collections" class="md-nav__link">
+    1.3 Working with Collections
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-controlling-app-execution-and-environment" class="md-nav__link">
+    1.4 Controlling App Execution and Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-capturing-application-activity-using-the-java-log-system" class="md-nav__link">
+    1.5 Capturing Application Activity using the Java Log System
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-multithreading-and-concurrency" class="md-nav__link">
+    1.6 Multithreading and Concurrency
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>CorePlatform</h1>
+
+<h2 id="java-runtime-environment-language">Java - Runtime Environment &amp; Language</h2>
+<ul>
+<li>
+<p><code>Java EE (Java Enterprise Edition)</code> is built on top of <code>JRE (Java Runtime Environment) / Java SE (Java Standard Edition)</code> </p>
+</li>
+<li>
+<p>Then there is <code>Java Micro Edition (Java ME)</code>, it is subset of JRE intended for embedded system. Example - used of IOT </p>
+</li>
+<li>
+<p>All this above things are owned by Oracle ( Sun was the owner but Oracle bought them)</p>
+</li>
+<li>
+<p>There is outlier <code>Android</code>, which based on the java environment but owned by Google</p>
+<ul>
+<li>From the programming language perspective Android uses <code>Java</code> but from Runtime perspective it used different things since it uses classes from <code>JRE</code> but all of it. <code>Threading</code> in the Android has different behaviour then in the <code>JRE</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="1-input-and-output-with-streams-and-files">1. Input and Output with Streams and Files</h2>
+<h3 id="11-streams">1.1 Streams</h3>
+<ul>
+<li>Stream is ordered sequence of data</li>
+<li>This provide a layer of abstraction over the underlying data as in whether it is network, media or file.</li>
+<li>
+<p>Stream are unidirectional - Read from , Write to</p>
+</li>
+<li>
+<p>types of streams</p>
+<ul>
+<li>Byte stream<ul>
+<li>interacts as binary data</li>
+</ul>
+</li>
+<li>Text stream<ul>
+<li>interacts as Unicode data </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Read from/ Write to</p>
+<p><img alt="streams" src="https://user-images.githubusercontent.com/36666451/118318386-f2a8f880-b516-11eb-8228-8b4ca932e055.png" />
+- Byte stream
+    - Base class - InputStream, OutputStream
+- Text stream 
+    - Base class - Reader, Writer</p>
+<ul>
+<li>
+<p>Read() methods for the both the streams retuen the number of bytes/char read from. </p>
+</li>
+<li>
+<p><code>OutputStream.Write(int inp)</code> methods accept, we provide <code>int</code> and that gets connverted to <code>byte</code>.
+Widening conversion ex. <code>Int -&gt; Byte</code> (8 bit - 32 bit) are done automatically by the compiler. </p>
+</li>
+</ul>
+</li>
+<li>
+<p>Derived classes over streams</p>
+<p><img alt="classesOverStreams" src="https://user-images.githubusercontent.com/36666451/118318935-b32edc00-b517-11eb-80fb-816b72fdebef.png" /></p>
+<p><img alt="derivedmethods" src="https://user-images.githubusercontent.com/36666451/118319389-508a1000-b518-11eb-875e-0bab78c5327e.png" /></p>
+<ul>
+<li>
+<p>These InputStreamReader and OutputStreamWriter provides layered binary and text streams. Basically allows us to Implement a reader stream over the InputStream. Reading as text stream over a binary stream. </p>
+</li>
+<li>
+<p>Cleanup the streams with the resources is a tricky task, since closeable interface implemented by the streams may not be optimum, so it implements AutoCloseable interface which provides Automatic Cleanup </p>
+</li>
+</ul>
+<p><code>Streams</code> &lt;--- (implements) <code>Closeable Interface</code> &lt;--- <code>AutoCloseable</code></p>
+<ul>
+<li><code>Try-with-resources</code><ul>
+<li>Automates the cleanup of 1 or more resources<ul>
+<li>A "resource" is any type that implements AutoCloseable interface</li>
+</ul>
+</li>
+<li>Example <ul>
+<li><code>try (Reader reader = Helper.openReader("file.txt"))</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Chaining Streams 
+<img alt="chainingStreams" src="https://user-images.githubusercontent.com/36666451/118376874-40416600-b5e8-11eb-8234-6c5f26d8b14c.png" /></p>
+</li>
+<li>
+<p>File and Buffered Streams</p>
+<ul>
+<li>
+<p>Buffered Streams</p>
+<ul>
+<li>Buffereed readers are used for File Read and write opertion.</li>
+<li>
+<p>Since they provide large chunk of data to read or write to file
+<img alt="Buffered_Streams" src="https://user-images.githubusercontent.com/36666451/118377003-f86f0e80-b5e8-11eb-90fb-568cb2f78c4d.png" /></p>
+</li>
+<li>
+<p>Buffered Writer</p>
+<ul>
+<li>Linux has <code>\n</code>  for the newline</li>
+<li>Windows uses <code>\r\n</code> (carriage return and new line)</li>
+<li>Buffered writer generates new line for the current platform using the newLine() methods  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>java.nio</p>
+<ul>
+<li>FileXXXX (FileReade and FileWriter), this methods are deprecated in the new library and <code>java.io</code> is replaced with <code>java.nio</code>. </li>
+<li>
+<p>InputStream and OutputStream are still in place
+<img alt="java nio" src="https://user-images.githubusercontent.com/36666451/118387522-8aeccd80-b63c-11eb-88d8-98d552acb63b.png" /></p>
+</li>
+<li>
+<p>Path
+<img alt="path_java_nio" src="https://user-images.githubusercontent.com/36666451/118387686-66452580-b63d-11eb-8e7f-4b6c8fc43b49.png" /></p>
+</li>
+<li>
+<p>File types</p>
+<ul>
+<li>
+<p>Once we have the <code>Path</code> then we can use <code>File</code> to interact with it
+<img alt="Files" src="https://user-images.githubusercontent.com/36666451/118387695-72c97e00-b63d-11eb-95ac-8c95eec59216.png" /></p>
+</li>
+<li>
+<p>Example
+<code>try(BufferedReader br = new Files.newBufferedReader(Paths.get("data.txt")))</code></p>
+</li>
+<li>We can use <code>BufferedWriter</code> to write into a file or we can make use of <code>Files.write()</code> which takes care of opening, writing and closing the file</li>
+</ul>
+</li>
+<li>
+<p>File System </p>
+<ul>
+<li>Represents a File System </li>
+<li>Can have specilized file systems such as zip</li>
+</ul>
+</li>
+<li>
+<p>URI - Universal Resource Identifier</p>
+<ul>
+<li>URI for zip file =&gt; "jar:file"</li>
+<li>File systems are identified by URI</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="12-string-formatting-and-regular-expressions">1.2 String Formatting and Regular Expressions</h3>
+<pre><code>- String Joiner 
+    - Lets you join the sequence of the strings based on separator, starting and ending value.
+
+
+- Strings with Format
+    - Format specifier  
+        - % [argument index] [flag] [width] [precision] conversion
+        - width - minimum characters to display
+        - precision - Decimal places to display
+
+        - Format Flags
+            ![format_flags](https://user-images.githubusercontent.com/36666451/119034548-19aa7300-b9cc-11eb-8086-37b3a78ff0bd.png)
+</code></pre>
+<h3 id="13-working-with-collections">1.3 Working with Collections</h3>
+<ul>
+<li>
+<p>Lambda</p>
+<ul>
+<li>
+<p>Simplify passing code as argument
+    ```
+    ArrayList as = new ArrayList();
+    as.forEach(m -&gt; m.getValue().equals("something"));</p>
+<p>```</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Comparable interface implementation provides </p>
+<ul>
+<li><code>compareTo</code> method to be implemented by the implementing class, this method is <code>sort()</code>      <br />
+<img alt="sorting" src="https://user-images.githubusercontent.com/36666451/119545156-1fc79780-bdb0-11eb-82a3-2b93e5aff1a8.png" /></li>
+</ul>
+</li>
+<li>
+<p>Comparator interface has <code>compare(class o, class b)</code> to be implemented where it takes two input</p>
+</li>
+</ul>
+<h3 id="14-controlling-app-execution-and-environment">1.4 Controlling App Execution and Environment</h3>
+<ul>
+<li>
+<p>Properties </p>
+<ul>
+<li>
+<p>can be used to persist data in key-value format</p>
+</li>
+<li>
+<p>Storing in the properties file
+    <img alt="properties" src="https://user-images.githubusercontent.com/36666451/121069593-48f21a00-c7eb-11eb-8cf4-47ddaedc1fe5.png" /></p>
+</li>
+<li>
+<p>We can load key-value pairs from the properties file with the help of input stream</p>
+</li>
+<li>
+<p>Properties file can be in format of simple <code>text file</code> or <code>xml</code></p>
+</li>
+<li>
+<p>We can use class information to access the stream that provides default property implementation</p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>Class loading</code></p>
+<ul>
+<li>default class loading done from the current directory and it must be in .class, not in the JAR file.</li>
+<li>CLASSPATH (default path is current directory)</li>
+<li>
+<p>Specifying CLASSPATH as an environment variable 
+    <code>set CLASSPATH=\somedirectory</code></p>
+</li>
+<li>
+<p>Paths provided as delimited list</p>
+<ul>
+<li>Windows: separate with ;</li>
+<li>Unix platforms: separate with : </li>
+<li>
+<p>Searched in the order they appear</p>
+</li>
+<li>
+<p>To reference classes in .class fiels</p>
+<ul>
+<li>Path to folder containing the package root</li>
+</ul>
+</li>
+<li>To reference classes in the jar files<ul>
+<li>Path to the jar file<ul>
+<li>including the jar file name</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>We can make use of <code>CLASSPATH</code> in order to use classes that are in <code>.class</code> or are in actual <code>JAR</code> file </p>
+</li>
+<li>
+<p>Class loading with the JARs</p>
+<ul>
+<li>Manifest file tells where to start from 
+<img alt="class_loading_with_JAR" src="https://user-images.githubusercontent.com/36666451/121082504-d0e02000-c7fb-11eb-97a4-c509412779ec.png" /></li>
+</ul>
+</li>
+<li>
+<p>We can use <code>System.getenv()</code> to get environment variables on a system</p>
+</li>
+</ul>
+<h3 id="15-capturing-application-activity-using-the-java-log-system">1.5 Capturing Application Activity using the Java Log System</h3>
+<ul>
+<li>
+<p>Log system is centrally managed 
+    <img alt="logger" src="https://user-images.githubusercontent.com/36666451/122685496-52d33e80-d229-11eb-96f7-b8f990738470.png" />
+    <img alt="logging_components" src="https://user-images.githubusercontent.com/36666451/122685499-549d0200-d229-11eb-9e2b-cb014f94e415.png" /></p>
+</li>
+<li>
+<p>Logging consists of mainly three parts </p>
+<ul>
+<li>Logger<ul>
+<li>Which accepts app calls</li>
+</ul>
+</li>
+<li>
+<p>Handler</p>
+<ul>
+<li>Publishes Logging information</li>
+<li>A logger can have multiple handlers</li>
+<li>Types of Built-in Handler <ul>
+<li>ConsoleHandler<ul>
+<li>writes to System.err</li>
+</ul>
+</li>
+<li>StreamHandler<ul>
+<li>writes to OutputStream</li>
+</ul>
+</li>
+<li>SocketHandler<ul>
+<li>writes to a network socket</li>
+</ul>
+</li>
+<li>FileHandler<ul>
+<li>writes to 1 or more file</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Formattter </p>
+<ul>
+<li>Formats log info for publication</li>
+<li>Each Handler has 1 Formatter</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Adding a logger 
+    <img alt="adding_a_logger" src="https://user-images.githubusercontent.com/36666451/122685625-3c79b280-d22a-11eb-90fc-840a6f689e24.png" /></p>
+</li>
+<li>
+<p>We can use <code>properties</code> file as a configuration for the loggin, that can be loaded while calling the program.</p>
+</li>
+<li>
+<p>Logger hierarchy is set by using fully qualified names, that shows parent/child relation where child inherits log levels from the parent</p>
+</li>
+</ul>
+<h3 id="16-multithreading-and-concurrency">1.6 Multithreading and Concurrency</h3>
+<ul>
+<li>Concurreny can be defined as a process can have multiple threads that can execute at the same time and may use the resource acquired by the process.</li>
+<li>
+<p>With the help of Multithreading, we take full advantages of the CPU resources</p>
+</li>
+<li>
+<p>Threading Foundation Types</p>
+<ul>
+<li>
+<p><code>Runnable Interface</code></p>
+<ul>
+<li>Represents a task to be on a thread</li>
+<li>Has only one member - <code>run</code> </li>
+<li>Implementation of this Interface allows classes to know how to run programmed instruction on the alternate thread.</li>
+</ul>
+</li>
+<li>
+<p><code>Thread Class</code></p>
+<ul>
+<li>Represents a thread of execution</li>
+<li>We can make use of this class. This expects implementation of the Runnable interface.</li>
+</ul>
+<p>```
+    public class A() implements runnable {</p>
+<pre><code>    public void run() {
+        try {
+            //does something threadfull
+
+        } catch(Expection e) {
+
+        }
+
+    }
+}
+
+public static voiud main(args[]) {
+    A a = new A();
+
+    Thread t = new Thread(A) // A implements Runnable Interface
+    t.start() // Runs the code on the alternate thread
+}
+</code></pre>
+<p>```
+- thread.join() //Blocks waiting for the thread completion</p>
+</li>
+<li>
+<p><code>Thread Pool</code></p>
+<ul>
+<li>
+<p>Allows to use the thread as pool where we can submit our task and expect it to run once thread a available and closing and shutdown of the thread will be taken care by the pool itself</p>
+</li>
+<li>
+<p>Idea to use Thread Pool instead of the direct thread is that it is automatically managed and not very likely bring down the whole system</p>
+</li>
+<li>
+<p>There are 2 types of the pool</p>
+<ul>
+<li><code>ExecutorService interface</code><ul>
+<li>Models thread pool behaviour</li>
+<li>Can submit tasks to the queue that can be taken up depending upon the number of thread allowed to run at once</li>
+<li>Request and wait for pool shutdown</li>
+</ul>
+</li>
+<li><code>Executor Class</code><ul>
+<li>Methods for creating thread pools<ul>
+<li>Dynamically sized pools</li>
+<li>Size limited pools</li>
+<li>Pools that schedule tasks for later</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+      
+    
+  </body>
+</html>

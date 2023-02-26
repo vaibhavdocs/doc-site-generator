@@ -1,0 +1,1655 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Other_Services/">
+      
+      
+        <link rel="next" href="../../AZ-900/Module%201/core_azure_concepts/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.15">
+    
+    
+      
+        <title>Storage Services - vaibhavdocs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.113286f1.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#azure-storage-account" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="vaibhavdocs" class="md-header__button md-logo" aria-label="vaibhavdocs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            vaibhavdocs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Storage Services
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="vaibhavdocs" class="md-nav__button md-logo" aria-label="vaibhavdocs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    vaibhavdocs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Algorithms
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Algorithms
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithms/Djikstra/" class="md-nav__link">
+        Djikstra
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Aws
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Aws
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../aws/basic/" class="md-nav__link">
+        Basic
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Azure
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Azure
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Azure-Cert
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../azure-dev-ops/" class="md-nav__link">
+        Azure dev ops
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          AZ 204
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          AZ 204
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Compute_Services/" class="md-nav__link">
+        Compute Services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Concepts/" class="md-nav__link">
+        Concepts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Database_Services/" class="md-nav__link">
+        Database Services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAC_Service/" class="md-nav__link">
+        IAC Service
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAM_Services/" class="md-nav__link">
+        IAM Services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Links_References/" class="md-nav__link">
+        Links References
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Logging_Monitoring_Services/" class="md-nav__link">
+        Logging Monitoring Services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network_Services/" class="md-nav__link">
+        Network Services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Other_Services/" class="md-nav__link">
+        Other Services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Storage Services
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Storage Services
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#azure-storage-account" class="md-nav__link">
+    Azure Storage Account
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-storage-services" class="md-nav__link">
+    Azure Storage Services
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Storage Services">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-blob-storage" class="md-nav__link">
+    Azure Blob Storage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-files" class="md-nav__link">
+    Azure Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-queues" class="md-nav__link">
+    Azure Queues
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-table-storage" class="md-nav__link">
+    Azure Table Storage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-managed-disks" class="md-nav__link">
+    Azure Managed Disks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sas" class="md-nav__link">
+    SAS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-key-vault" class="md-nav__link">
+    Azure Key Vault
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          AZ 900
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          AZ 900
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4_1" id="__nav_4_4_1_label" tabindex="0">
+          Module 1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Module 1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AZ-900/Module%201/core_azure_concepts/" class="md-nav__link">
+        Core azure concepts
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4_2" id="__nav_4_4_2_label" tabindex="0">
+          Module 2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Module 2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AZ-900/Module%202/core_azure_services/" class="md-nav__link">
+        Core azure services
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4_3" id="__nav_4_4_3_label" tabindex="0">
+          Module 3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Module 3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AZ-900/Module%203/core_solutions_mgmt_tools/" class="md-nav__link">
+        Core solutions mgmt tools
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4_4" id="__nav_4_4_4_label" tabindex="0">
+          Module 4
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Module 4
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AZ-900/Module%204/general_security_network_security/" class="md-nav__link">
+        General security network security
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4_5" id="__nav_4_4_5_label" tabindex="0">
+          Module 5
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Module 5
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AZ-900/Module%205/identity_governance_privacy_compliance/" class="md-nav__link">
+        Identity governance privacy compliance
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4_6" id="__nav_4_4_6_label" tabindex="0">
+          Module 6
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Module 6
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AZ-900/Module%206/cost_sla/" class="md-nav__link">
+        Cost sla
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Destruct auth
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Destruct auth
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../destruct-auth/authetication-basics/" class="md-nav__link">
+        Authetication basics
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Java
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Java
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+          Beginner
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_1">
+          <span class="md-nav__icon md-icon"></span>
+          Beginner
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/Beginner/ClassInterface/" class="md-nav__link">
+        ClassInterface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/Beginner/Collection/" class="md-nav__link">
+        Collection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/Beginner/GeneralProgramming/" class="md-nav__link">
+        GeneralProgramming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/Beginner/ModernJava/" class="md-nav__link">
+        ModernJava
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+          Intermediate
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Intermediate
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/Intermediate/CorePlatform/" class="md-nav__link">
+        CorePlatform
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Javascript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Javascript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascript/basics/" class="md-nav__link">
+        Basics
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          K8s
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          K8s
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../k8s/basic/" class="md-nav__link">
+        Basic
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#azure-storage-account" class="md-nav__link">
+    Azure Storage Account
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-storage-services" class="md-nav__link">
+    Azure Storage Services
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Storage Services">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-blob-storage" class="md-nav__link">
+    Azure Blob Storage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-files" class="md-nav__link">
+    Azure Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-queues" class="md-nav__link">
+    Azure Queues
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-table-storage" class="md-nav__link">
+    Azure Table Storage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-managed-disks" class="md-nav__link">
+    Azure Managed Disks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sas" class="md-nav__link">
+    SAS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-key-vault" class="md-nav__link">
+    Azure Key Vault
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Storage Services</h1>
+
+<h3 id="azure-storage-account">Azure Storage Account</h3>
+<p><img alt="image" src="https://user-images.githubusercontent.com/36666451/197263447-dfdd00c7-489c-461e-afe0-962ddf566e33.png" /></p>
+<h3 id="azure-storage-services">Azure Storage Services</h3>
+<ul>
+<li><strong>Blob storage</strong><ul>
+<li>Storage for the object, unstructed data such as text and binary.</li>
+</ul>
+</li>
+<li><strong>Azure Queues</strong><ul>
+<li>Provides storage for the messages.</li>
+<li>A message could be &lt;= 64kb</li>
+</ul>
+</li>
+<li><strong>Azure Tables</strong><ul>
+<li>For NoSQL data</li>
+<li>Provides storage for key/value data and schema-less design</li>
+</ul>
+</li>
+<li><strong>Azure Files</strong><ul>
+<li>File share system for cloud or on prem.</li>
+<li>Could be mounted on multiple OSs - Windows, Linux and Mac</li>
+</ul>
+</li>
+<li><strong>Azure Disks</strong><ul>
+<li>Block level storage volumes</li>
+<li>Provides storage capabilites for the VMs</li>
+<li>Just like a physical disks - HDD, SDD disks</li>
+</ul>
+</li>
+<li>Containers could be created in order to further categorize data into these above storage types</li>
+</ul>
+<h4 id="azure-blob-storage">Azure Blob Storage</h4>
+<ul>
+<li>
+<p>Hierarchy of Blob storage in Azure: <strong>Storage Account &gt;&gt; Container &gt;&gt; Blob</strong>.</p>
+</li>
+<li>
+<p>Types of Blobs supported in AZ are: </p>
+<ul>
+<li><strong>Block Blobs</strong> (for storing large data and can be deleted or updated), </li>
+<li><strong>Append Blobs</strong> (optimized for append operations and cannot be deleted or updated), and, </li>
+<li><strong>Page Blobs</strong> (for random access files storage, commonly used for virtual hard disks on Azure VM).</li>
+</ul>
+</li>
+<li>
+<p>Azure also provides an immutable object storage policy where objects cannot be deleted or modified. Moving blobs between containers is not supported natively but can be achieved using <strong>AzCopy</strong> or Data Movement Library. Moving blobs between storage accounts can be done using AzCopy.</p>
+</li>
+<li>
+<p>Blob <strong>leasing</strong> provides ownership of the blob for a given time period, making the blob read-only during that time. </p>
+</li>
+<li>
+<p>Tiers of Blob storage, in decreasing order of cost, are <strong>Premium, Hot, Cold, and Archive</strong>. Retention policies include Time-Based and Legal Hold. Blob storage can store unstructured data in the form of binary or text files. Access tiers include Hot (for frequently used data), Cool (for infrequently accessed data stored for at least 30 days), and Archived (for data that can be stored for at least 180 days). Archived data is of type 'offline' and to access it, the access tier needs to be converted to hot or cool (process called rehydrating).</p>
+</li>
+<li>
+<p>Authorizing requests to Blob storage can be done using <strong>Shared Key</strong> (account key), <strong>Shared Access Signature</strong> (token added to blob URLs), <strong>Azure AD</strong>, or <strong>Anonymous read access</strong>. </p>
+</li>
+<li>
+<p>Blob storage can be accessed using the Azure SDK, which is a collection of client libraries.</p>
+</li>
+<li>
+<p>The security principal may be a user, group, application service principal, or Azure managed identity. The security principal is authenticated by Azure AD to return an OAuth 2.0 token. The token can then be used to authorize a request against the Blob service.</p>
+</li>
+</ul>
+<h4 id="azure-files">Azure Files</h4>
+<ul>
+<li>Enables file share on the cloud.</li>
+<li>Uses Server Message Block Protocol  (SMB) in order to do so.</li>
+<li>Equivalent of the on-prem file server and could be mounted on the linux, windows and Mac server.</li>
+</ul>
+<h4 id="azure-queues">Azure Queues</h4>
+<ul>
+<li>Provides storage for the message which are used for communication among distributed application, these message could be up to 64kb in the size and AZ Queues are accesible through HTTP or HTTPS connections.</li>
+</ul>
+<h4 id="azure-table-storage">Azure Table Storage</h4>
+<ul>
+<li>Allows you store thge NoSQL database</li>
+<li>A Table would contians several entities which need not share the same property and table does not enforce any schema on these entities.</li>
+</ul>
+<h4 id="azure-managed-disks">Azure Managed Disks</h4>
+<ul>
+<li>Azure Managed Disks are used for the VMs.</li>
+<li>Disk Roles <ul>
+<li>Data - Stores application data</li>
+<li>OS - hosts the VM's OS and boot volume</li>
+<li>TEMP - not a managed disk, store pages and swap files</li>
+</ul>
+</li>
+</ul>
+<h3 id="sas">SAS</h3>
+<ul>
+<li>A shared access signature (SAS) provides secure delegated access to resources in a storage account. With a SAS, you have granular control over how a client can access data. You can specify what resource the client may access, what permissions they have to those resources, and how long the SAS is valid. SAS is given to a client who require accesss to resource for short time. </li>
+</ul>
+<h3 id="azure-key-vault">Azure Key Vault</h3>
+<ul>
+<li>Helps you safeguard cryptographic keys and other secrets used by cloud apps and services.</li>
+<li>Focuses on <ul>
+<li>Certificate Management<ul>
+<li>Easily provision, manage and deploy public and private SSL certificates for use with Azure and internal connected resources</li>
+</ul>
+</li>
+<li>Key Management<ul>
+<li>Create and control the encryption keys used to encrypt your data</li>
+</ul>
+</li>
+<li>Secret Management<ul>
+<li>Stores password, token, certs and other secrets</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>HSM and FIPS<ul>
+<li>Hardware Security Module<ul>
+<li>Hardware designed to store encryption keys</li>
+</ul>
+</li>
+<li>Federal Information Processing Standard <ul>
+<li>US and canadian goverment standard that specifies the security requirements for cryptographic modules that protect sensitive information</li>
+<li>HSM that are multi-tenant are <strong>FIPS 140-2 Level 2 compliant</strong></li>
+<li>HSM that are single-tenant are <strong>FIPS 140-2 Level 3 compliant</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Vault stores secrets and keys can be protected by software or <strong>FIPS 140-2 Level 2 validated HSMs</strong></li>
+<li>Azure Key Vault provides two types of container<ul>
+<li>Vaults</li>
+<li>HSM Pools</li>
+</ul>
+</li>
+<li>Pricing Tiers <ul>
+<li>Standard</li>
+<li>Premium<ul>
+<li>HSM Backed Keys/ Software backed </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Keys</p>
+<ul>
+<li>When creating keys, there are three options<ul>
+<li>Generate - Azure will generate key            <ul>
+<li>RSA (Rivest - Shamir - Adleman) or EC (Elliptic Curve cryptography)</li>
+</ul>
+</li>
+<li>Import - Importing a RSA key</li>
+<li>Restore backup - Restore a key from a backup</li>
+</ul>
+</li>
+<li>For Premium, we have options for HSM as well.</li>
+<li><strong>Microsoft managed keys (MMK)</strong> are keys managed by microsoft. Not shown in key vault.</li>
+<li><strong>Customer Managed Keys (CMK)</strong>  are keys you create in Azure Key Vault. </li>
+</ul>
+</li>
+<li>
+<p>Double encryption</p>
+<ul>
+<li>Storage Accounts <ul>
+<li>Infrastructure Encryption <ul>
+<li>By default, AZ encrypts storage account data at rest, this adds second layer of encryption to the data</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Azure Disk </p>
+<ul>
+<li>Double Encryption<ul>
+<li>Two or more layers of independent encryption layers are enabled to protect against the compromises of any one of the layer.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Microsoft has a two layered approach each for Data-at-rest and In-transit</p>
+<ul>
+<li>Data at rest<ul>
+<li>Disk Encryption using CMK</li>
+<li>Infrastructure Encryption using platform managed keys </li>
+</ul>
+</li>
+<li>In transit<ul>
+<li>TLS 1.2</li>
+<li>Additional layer of encryption provided at the infrastructure layer</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>China used FIPS - 140 - Level 1 whereas other regions go for level 2 for the secret storage</li>
+<li>Secrets are always encrypted</li>
+</ul>
+</li>
+<li>
+<p>X509 Certificate</p>
+<ul>
+<li><strong>PKI (Public Key Infrastructure)</strong> <ul>
+<li>PKI is a set of roles, policies, hardware, software and procedures needed to create, manage, distribute, use, store and revoke digital certificates and manage public-key encryption. </li>
+</ul>
+</li>
+<li>It is a standard defined by Internation Telecommunication Union (ITU) for public key certifications</li>
+<li>Used with <ul>
+<li>SSL/TLS and HTTPS</li>
+<li>Signed and encrypted email</li>
+<li>Code signing</li>
+</ul>
+</li>
+<li>A certificate contains<ul>
+<li>An identity - hostname, organization or individual</li>
+<li>A public key - RSA, DSA, ECDA etc</li>
+</ul>
+</li>
+<li>CA (certificate authority)<ul>
+<li>It issues the digital certificates</li>
+<li>A trusted third party by owner of the certificate and party relying on the certificate</li>
+</ul>
+</li>
+<li>Certificate Formats<ul>
+<li>PEM</li>
+<li>CER</li>
+<li>PFX</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+      
+    
+  </body>
+</html>

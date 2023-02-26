@@ -1,0 +1,2234 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../azure-dev-ops/">
+      
+      
+        <link rel="next" href="../Concepts/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.15">
+    
+    
+      
+        <title>Compute Services - vaibhavdocs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.113286f1.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#azure-virtual-machines" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="vaibhavdocs" class="md-header__button md-logo" aria-label="vaibhavdocs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            vaibhavdocs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Compute Services
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="vaibhavdocs" class="md-nav__button md-logo" aria-label="vaibhavdocs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    vaibhavdocs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Algorithms
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Algorithms
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithms/Djikstra/" class="md-nav__link">
+        Djikstra
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Aws
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Aws
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../aws/basic/" class="md-nav__link">
+        Basic
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Azure
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Azure
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Azure-Cert
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../azure-dev-ops/" class="md-nav__link">
+        Azure dev ops
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          AZ 204
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          AZ 204
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Compute Services
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Compute Services
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#azure-virtual-machines" class="md-nav__link">
+    Azure Virtual Machines
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-availability-sets" class="md-nav__link">
+    Azure Availability Sets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-app-service" class="md-nav__link">
+    Azure App Service
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure App Service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#runtime-environment" class="md-nav__link">
+    Runtime Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-slots" class="md-nav__link">
+    Deployment Slots
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#app-service-environment" class="md-nav__link">
+    App Service Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    Deployment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#webjobs" class="md-nav__link">
+    WebJobs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-container-service-azure-kubernetes-service" class="md-nav__link">
+    Azure Container Service &amp; Azure Kubernetes Service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-container-instances" class="md-nav__link">
+    Azure Container Instances
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-container-registry" class="md-nav__link">
+    Azure Container Registry
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-service-fabric" class="md-nav__link">
+    Azure Service Fabric
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-container-with-azure-devops" class="md-nav__link">
+    Building Container with Azure DevOps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-serverless-services" class="md-nav__link">
+    Azure Serverless Services
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Serverless Services">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design-first-technologies" class="md-nav__link">
+    Design-first technologies
+  </a>
+  
+    <nav class="md-nav" aria-label="Design-first technologies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logic-apps" class="md-nav__link">
+    Logic Apps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-automate" class="md-nav__link">
+    Power Automate
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-first-technologies" class="md-nav__link">
+    Code-first technologies
+  </a>
+  
+    <nav class="md-nav" aria-label="Code-first technologies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#webjobs-and-webjobs-sdk" class="md-nav__link">
+    WebJobs and WebJobs SDK
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-functions" class="md-nav__link">
+    Azure Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-serveless-application" class="md-nav__link">
+    Creating a serveless application
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-app" class="md-nav__link">
+    Function App
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#durable-functions" class="md-nav__link">
+    Durable functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Durable functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authorization-on-the-azure-functions" class="md-nav__link">
+    Authorization on the Azure Functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-functions-core-tools" class="md-nav__link">
+    Azure Functions Core Tools
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Concepts/" class="md-nav__link">
+        Concepts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Database_Services/" class="md-nav__link">
+        Database Services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAC_Service/" class="md-nav__link">
+        IAC Service
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAM_Services/" class="md-nav__link">
+        IAM Services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Links_References/" class="md-nav__link">
+        Links References
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Logging_Monitoring_Services/" class="md-nav__link">
+        Logging Monitoring Services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Network_Services/" class="md-nav__link">
+        Network Services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Other_Services/" class="md-nav__link">
+        Other Services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Storage_Services/" class="md-nav__link">
+        Storage Services
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          AZ 900
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          AZ 900
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4_1" id="__nav_4_4_1_label" tabindex="0">
+          Module 1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Module 1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AZ-900/Module%201/core_azure_concepts/" class="md-nav__link">
+        Core azure concepts
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4_2" id="__nav_4_4_2_label" tabindex="0">
+          Module 2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Module 2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AZ-900/Module%202/core_azure_services/" class="md-nav__link">
+        Core azure services
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4_3" id="__nav_4_4_3_label" tabindex="0">
+          Module 3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Module 3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AZ-900/Module%203/core_solutions_mgmt_tools/" class="md-nav__link">
+        Core solutions mgmt tools
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4_4" id="__nav_4_4_4_label" tabindex="0">
+          Module 4
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Module 4
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AZ-900/Module%204/general_security_network_security/" class="md-nav__link">
+        General security network security
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4_5" id="__nav_4_4_5_label" tabindex="0">
+          Module 5
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Module 5
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AZ-900/Module%205/identity_governance_privacy_compliance/" class="md-nav__link">
+        Identity governance privacy compliance
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4_6" id="__nav_4_4_6_label" tabindex="0">
+          Module 6
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Module 6
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AZ-900/Module%206/cost_sla/" class="md-nav__link">
+        Cost sla
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Destruct auth
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Destruct auth
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../destruct-auth/authetication-basics/" class="md-nav__link">
+        Authetication basics
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Java
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Java
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+          Beginner
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_1">
+          <span class="md-nav__icon md-icon"></span>
+          Beginner
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/Beginner/ClassInterface/" class="md-nav__link">
+        ClassInterface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/Beginner/Collection/" class="md-nav__link">
+        Collection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/Beginner/GeneralProgramming/" class="md-nav__link">
+        GeneralProgramming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/Beginner/ModernJava/" class="md-nav__link">
+        ModernJava
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+          Intermediate
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Intermediate
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/Intermediate/CorePlatform/" class="md-nav__link">
+        CorePlatform
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Javascript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Javascript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../javascript/basics/" class="md-nav__link">
+        Basics
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          K8s
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          K8s
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../k8s/basic/" class="md-nav__link">
+        Basic
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#azure-virtual-machines" class="md-nav__link">
+    Azure Virtual Machines
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-availability-sets" class="md-nav__link">
+    Azure Availability Sets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-app-service" class="md-nav__link">
+    Azure App Service
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure App Service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#runtime-environment" class="md-nav__link">
+    Runtime Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-slots" class="md-nav__link">
+    Deployment Slots
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#app-service-environment" class="md-nav__link">
+    App Service Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    Deployment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#webjobs" class="md-nav__link">
+    WebJobs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-container-service-azure-kubernetes-service" class="md-nav__link">
+    Azure Container Service &amp; Azure Kubernetes Service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-container-instances" class="md-nav__link">
+    Azure Container Instances
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-container-registry" class="md-nav__link">
+    Azure Container Registry
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-service-fabric" class="md-nav__link">
+    Azure Service Fabric
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-container-with-azure-devops" class="md-nav__link">
+    Building Container with Azure DevOps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-serverless-services" class="md-nav__link">
+    Azure Serverless Services
+  </a>
+  
+    <nav class="md-nav" aria-label="Azure Serverless Services">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design-first-technologies" class="md-nav__link">
+    Design-first technologies
+  </a>
+  
+    <nav class="md-nav" aria-label="Design-first technologies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logic-apps" class="md-nav__link">
+    Logic Apps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-automate" class="md-nav__link">
+    Power Automate
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-first-technologies" class="md-nav__link">
+    Code-first technologies
+  </a>
+  
+    <nav class="md-nav" aria-label="Code-first technologies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#webjobs-and-webjobs-sdk" class="md-nav__link">
+    WebJobs and WebJobs SDK
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-functions" class="md-nav__link">
+    Azure Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-serveless-application" class="md-nav__link">
+    Creating a serveless application
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-app" class="md-nav__link">
+    Function App
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#durable-functions" class="md-nav__link">
+    Durable functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Durable functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authorization-on-the-azure-functions" class="md-nav__link">
+    Authorization on the Azure Functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-functions-core-tools" class="md-nav__link">
+    Azure Functions Core Tools
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Compute Services</h1>
+
+<h2 id="azure-virtual-machines">Azure Virtual Machines</h2>
+<ul>
+<li>Lets you choose your OS, memory, and storage.</li>
+<li>Comes at the cost of maintaining the software level services such OS patches.    </li>
+<li>These are billed at hourly rate.</li>
+<li>SLA of 99.9% (When all the storage options are premium)</li>
+<li>Components when VM gets created<ul>
+<li><strong>Network Security Group</strong><ul>
+<li>Attached to Network Interface Component, Virtual firewall with rules around ports and protocols.</li>
+</ul>
+</li>
+<li><strong>Network Interface Component</strong> <ul>
+<li>A device that handles the ip and network communication </li>
+</ul>
+</li>
+<li><strong>Virtual machine</strong> itself</li>
+<li><strong>Public IP Address</strong></li>
+<li><strong>Virtual Network</strong> - Network where your VM will reside</li>
+</ul>
+</li>
+<li>
+<p>You can bring your linux by creating a <strong>Linux Virtual Hard Disk (VHD)</strong></p>
+</li>
+<li>
+<p><strong>Cloud-Init</strong></p>
+<ul>
+<li>Cloud-init is the industry standard multi-distribution method for cross-platform cloud instance initialization. It is supported across all major public cloud providers, provisioning systems for private cloud infrastructure, and bare metal installations.</li>
+<li>Cloud instance initialization is the process of the preparing the instance with all the configuration data for the operating system and runtime environment.<ul>
+<li>Cloud instances are intialized from a disk image and instance data<ul>
+<li><strong>Meta-data</strong></li>
+<li><strong>User-data</strong> - it is the script that you want to run when an instance first boots up. Eg. Install Apache web-server</li>
+<li><strong>Vendor-data</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ARM (infrastructure as code) is <strong>cloud init</strong> underneath</li>
+<li>Cloud init only works for linux distribution.</li>
+</ul>
+</li>
+<li>
+<p>Azure VMs are categorized into </p>
+<ul>
+<li>Types<ul>
+<li>General Purpose</li>
+<li>Compute Optimized  </li>
+<li>Memory Optimized</li>
+<li>Storage Optimized</li>
+<li>GPU</li>
+<li>High Performance Compute</li>
+</ul>
+</li>
+<li>Size<ul>
+<li>Also called series and SKU </li>
+<li>Multiple options are there        </li>
+<li>B, D*</li>
+<li>F* </li>
+<li>E*, M </li>
+<li>L*</li>
+<li>N*</li>
+<li>H*</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Azure Compute Unit (ACU)</strong><ul>
+<li>Provides a way of comparing compute performance across Azure SKUs. It is standardized on a Small (Standard_A1) with a value of 100.</li>
+</ul>
+</li>
+<li><strong>Hyper-V</strong> is the Microsoft's hardware virtualization product. How we have <strong>Virtual Box</strong> for linux and MacOS.</li>
+<li>Azure Gen 1 and Gen 2<ul>
+<li>Gen 1 are the BIOS boot based arch</li>
+<li>Gen 2 are Uefi boot based arch, secure boot and can have larger boot volume upto 64 TB.</li>
+</ul>
+</li>
+<li>
+<p><strong>SSH, RDP and Bastions</strong></p>
+<ul>
+<li>SSH (Secure Shell) is protocol to establish a secure connection  between a client and server, happens on port 22.<ul>
+<li>SSH Key pairs is when you generate out two keys <ul>
+<li>Private and public keys</li>
+<li>Private Key remains on the local system and public key is stored on VM.</li>
+<li>When you SSH, you provide your private key which is matched against public.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>RDP (Remote Desktop Protocol) is proprietary protocol developed Microsoft which provides a user with GUI to connect to another computer over a
+    network connection, happens on port 3389 using TCP and UDP, you can only connect to windows server via Visual Desktop <ul>
+<li>This only works with Windows Server.</li>
+</ul>
+</li>
+<li>Bastions, it is an azure service, which gets deployed and lets you connect over browser to the VM. It has its own subnet. It would get use where you don't have SSH client or RDP client such as chromebook.</li>
+</ul>
+</li>
+<li>
+<p><strong>Windows vs Linux Server</strong></p>
+<ul>
+<li>Windows server requires a license</li>
+<li>Requires user name and password</li>
+<li>Much larger instancee to run Windows at least a B2</li>
+<li>Linux requires no licenses</li>
+</ul>
+</li>
+<li>
+<p><strong>Update Management</strong></p>
+<ul>
+<li>Allows to manage and install OS patches and updates for both windows and linux that are deployed in Azure, on-premises, or in other cloud providers.</li>
+</ul>
+</li>
+</ul>
+<h2 id="azure-availability-sets">Azure Availability Sets</h2>
+<ul>
+<li>Azure consists of racks upon racks of the server and, each rack could be a <strong>Fault Domain</strong>. </li>
+<li>Availability Sets distributes workload mutliple Fault Domains. </li>
+<li>Grouping VMs in an availability sets also gives the Windows Azure Fabric Controller (FC) the information it needs to intelligently update the host OSs that your guest VMs are running on. Without availability sets the FC would have no idea that two machines were serving the same purpose and could reasonable take them both down for host OS updates.</li>
+<li>An Availability Set also makes use of Update Domains. This allow you to determine how many of the workloads are down at any given time. </li>
+<li>You can set a priority order for shutting down the VMs and the number of update domains determines how many machines will be involved in the shutdown. </li>
+<li>Reference - https://www.softnas.com/docs/softnas/v3/html/azure_availability_sets.html</li>
+</ul>
+<h2 id="azure-app-service">Azure App Service</h2>
+<ul>
+<li>Azure App Service is HTTP based service for hosting web applications, REST APIs, and Mobile back ends.</li>
+<li>It is PaaS, so it's the <strong>Heroku</strong> equivalent for Azure or <strong>AWS Elastic Beanstalk</strong></li>
+<li>Creating App Service Plan firstly gives better idea of how can App Services are brought into same service container, although If you directly create an App Service it will automatically create App Service Plan.</li>
+<li>It takes care of the following underlying infrastructure<ul>
+<li>Security patches for OS and languages</li>
+<li>Load Balancing</li>
+<li>Autoscaling</li>
+<li>Automated manager</li>
+</ul>
+</li>
+<li>App service makes it easy to implement common integration and features such as <ul>
+<li>Azure DevOps (For Deployments)</li>
+<li>Github Integration</li>
+<li>Docker Hub Integration</li>
+<li>Package Management</li>
+<li>Custom domains</li>
+<li>Attaching TLS/SSL certificates</li>
+</ul>
+</li>
+<li>Pricing Tiers<ul>
+<li>Shared Tier - Free and Shared - Linux based instances are not supported</li>
+<li>Dedicated Tier - Basic, Standard, Premium, PremiumV2 and, PremiumV3</li>
+<li>Isolated Tier</li>
+</ul>
+</li>
+<li>Azure App service can also run docker single or multi-containers</li>
+<li>While you can deploy Linux web apps on Azure App Service, there are a number of limitations. </li>
+<li>App Service on Linux isn’t supported on the shared pricing tier.</li>
+<li>You are not able to mix Windows and Linux apps in the same App Service plan. </li>
+<li>You can’t mix Windows and Linux apps in the same region within the same resource group.</li>
+<li>App Service Plan can have mutliple application running inside it. Depending upon the kind of pricing tier we have.</li>
+<li>The Advanced Tools are what App Service deployments are built on top of. The advanced tools engine is called Kudu. </li>
+<li>By default azure domain names such as azurewebsites are secured and can be accessed over http and https protocols, but having a custom domain and securing that requires SSL and TLS certification.</li>
+<li>App service plan needs to be in standard/premium for Backup/Restore option.</li>
+</ul>
+<h3 id="runtime-environment">Runtime Environment</h3>
+<ul>
+<li>A runtime for Azure App Service will be a pre-defined container that your programming language and commonly used libs for that language installed.</li>
+</ul>
+<p>Solution for language that are not supported 
+- Create a custom docker container
+- Deploy it to ACR 
+- Deploy image to App Service </p>
+<h3 id="deployment-slots">Deployment Slots</h3>
+<ul>
+<li>Create different enviroments of your web application associated to a different hostname. This is useful when need a staging or QA environment</li>
+<li>You can swap environment, this is how you can perform a Blue/Green deployment</li>
+</ul>
+<h3 id="app-service-environment">App Service Environment</h3>
+<ul>
+<li>Provides a fully isolated and dedicated environment for securely running App Service apps at high scale</li>
+<li>This allows <ul>
+<li>Windows Web app</li>
+<li>Linux Web App</li>
+<li>Docker containers</li>
+<li>Mobile apps</li>
+<li>Function</li>
+</ul>
+</li>
+<li>Ideal for workloads that require<ul>
+<li>Very high scale </li>
+<li>Isolation and secure network access</li>
+<li>High memory utilization</li>
+</ul>
+</li>
+<li>ASEs can be deployed in single or across mutliple regions. Ideal for horizontal scaling stateless application tiers in support of high requests per second (RPS) workloads</li>
+<li>ASE only supported in Isolated tier</li>
+<li>WAF can be applied here.</li>
+<li>
+<p>ASEs can be deployed to availability zones using zone pinning.</p>
+</li>
+<li>
+<p>Deployment types for an ASE</p>
+<ul>
+<li>External ASE<ul>
+<li>Exposes the ASE hosted app on an internet-accessible IP address.</li>
+</ul>
+</li>
+<li>ILB ASE<ul>
+<li>Addition of Internal Load Balancer is the only difference here.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="deployment">Deployment</h3>
+<p>The action of pushing changes or updates from a local environment or repository into a remote environment. 
+Azure App Services provides many ways to deploy your applications: 
+- Run from Package 
+    - Since other deployement get mounted at /home/site/wwwroot, but in case of package the zip itself becomes the readonly wwwroot so it escapes the filelock conflicts
+- Deploy ZIP or WAR (Uses Kudu) 
+    - Kudu engine provides CI based deployments, it is the engine behind git deployments
+- Deploy via FTP 
+    - Needs FTP client and just drag and drop
+- Deploy via cloud sync (Dropbox or One Drive) 
+- Deploy continuously (GitHub, BitBucket, and Azure Repos) uses Kudu and Azure Pipelines 
+- Deploy using a custom container Cl/CD pipeline (Deploy for Docker Hub or Azure Container Registry) 
+- Deploy from local Git (Kudu build server,) 
+- Deploy using Github Actions 
+- Deploy using Github Actions containers 
+- Deploy with template (ARM templates</p>
+<h3 id="webjobs">WebJobs</h3>
+<ul>
+<li>Program or script runs in the same instance as a web app, API app, or mobile app.</li>
+<li>Not supported by App Service on Linux</li>
+<li>Types<ul>
+<li>Continuous<ul>
+<li>runs continuosly until stopped</li>
+</ul>
+</li>
+<li>Triggered<ul>
+<li>run only when triggered</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="azure-container-service-azure-kubernetes-service">Azure Container Service &amp; Azure Kubernetes Service</h2>
+<ul>
+<li>Azure Container Instances is development and deployment oriented. Provides Hypervisor Isolation, which makes sure that you're organization is not sharing the OS Kernel.</li>
+<li>Azure Kubernetes Service, manage and deploy kuberenetes.</li>
+<li>Azure Container Registry. allows to store and manage container image in the central registry.</li>
+</ul>
+<h2 id="azure-container-instances">Azure Container Instances</h2>
+<ul>
+<li>Package, deploy and manage cloud applications using containers. Fully managed docker as service.</li>
+<li>You only deal with containers here without having to worry about the virtual machine setup.</li>
+<li>Ideally for <ul>
+<li>Simple application</li>
+<li>Task Automation</li>
+<li>Build Jobs</li>
+</ul>
+</li>
+<li>Can be provisioned within seconds</li>
+<li>Have custom sizing of the vCPUs, Memory and GPUs where VMs sizes are determined.</li>
+<li>Can deploy both windows and linux containers</li>
+<li>Can persist storage with Azure Files<ul>
+<li>Secret Volume, Empty Directory and Cloud Git Repo</li>
+</ul>
+</li>
+<li>ACIs are accessed via a fully qualified domain name</li>
+<li>Can pull images from <ul>
+<li>ACR</li>
+<li>dockerhub</li>
+<li>private registries</li>
+</ul>
+</li>
+<li>Container Groups are container groups which gets scheduled on the same host machine, these share <ul>
+<li>lifecycle</li>
+<li>resources</li>
+<li>network </li>
+<li>storage volumes</li>
+</ul>
+</li>
+<li>Container Groups are similar to Kubernetes Pods</li>
+<li>Multi container groups currently supports only Linux containers</li>
+<li><img alt="multi" src="https://user-images.githubusercontent.com/36666451/196981849-c8bf80c5-94b7-469b-b746-755bd25084d8.png" /></li>
+<li>Ways to creats multi container groups <ul>
+<li>ARM</li>
+<li>YAML</li>
+</ul>
+</li>
+<li>Restart Policy <ul>
+<li>Always, Never and OnFailure</li>
+</ul>
+</li>
+<li>Commands are <ul>
+<li>az container logs, az container exec </li>
+</ul>
+</li>
+</ul>
+<h2 id="azure-container-registry">Azure Container Registry</h2>
+<ul>
+<li>A private registry to maintain and create your docker images.</li>
+<li>Managed private docker registry based upon <strong>open-source docker registry 2.0</strong></li>
+<li>Azure registry tasks to build container images in Azure</li>
+<li>ACR tasks allow you to automate OS and framework patching for your docker containers.</li>
+<li>Deployment targets where images could be pulled<ul>
+<li>kuberntes</li>
+<li>DC/OS</li>
+<li>docker swarm</li>
+</ul>
+</li>
+</ul>
+<h2 id="azure-service-fabric">Azure Service Fabric</h2>
+<ul>
+<li>Azure Service Fabric, allows to build and operate always, scalable and distributed apps</li>
+</ul>
+<h2 id="building-container-with-azure-devops">Building Container with Azure DevOps</h2>
+<ul>
+<li>Docker images can be pushed to a Registry created using ACR</li>
+<li>Containers are deployed in container groups. Container groups are a similar concept to Kubernetes pods. They are a grouping of containers and run on the same hardware and use the same networking.</li>
+<li>Mutiple docker files could be maintained as single Dockerfile where each dockerfile is a stage.</li>
+</ul>
+<h2 id="azure-serverless-services">Azure Serverless Services</h2>
+<ul>
+<li>Serverless tasks are billed upon execution of the business logic.</li>
+<li>Here, Serverless must be interpreted as Cloud Tenant put efforts and time in developing the application rather than managing the infrastructure so it is done automatically i.e. scales up/down automatically</li>
+<li>Business process modeled in software are often called as workflows.</li>
+<li>Workflows can be implemented using following azure services since all of them take input, have action
+on them, conditions and produces output</li>
+<li>Logic Apps</li>
+<li>Microsoft Power Automate</li>
+<li>WebJobs</li>
+<li>Azure Functions</li>
+</ul>
+<h3 id="design-first-technologies">Design-first technologies</h3>
+<ul>
+<li>
+<p>Approches to Designing the workflow firstly </p>
+<ul>
+<li>
+<h4 id="logic-apps">Logic Apps</h4>
+<ul>
+<li>Logic Apps is visualize and code interface to automate, orchestrate, and integrate disparate components of the distributed application and has power to integrate to external source with the help of connectors i.e. Twitter as connecter may let you read tweets and send as well.</li>
+<li>A custom connector can be created as well.</li>
+</ul>
+</li>
+<li>
+<h4 id="power-automate">Power Automate</h4>
+<ul>
+<li>Used by busines user rather than developer</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="code-first-technologies">Code-first technologies</h3>
+<ul>
+<li>Developers may be inclined towards code first technology since it gives you more refined and custom control over the functions.</li>
+<li>WebJobs are the only technology that permits developers to control retry policies.</li>
+<li>
+<p>Azure Logic Apps is the only one of the four technologies that provides a design-first approach intended for developers.</p>
+<ul>
+<li>
+<h4 id="webjobs-and-webjobs-sdk">WebJobs and WebJobs SDK</h4>
+<ul>
+<li>Auzre App Service is cloud based hosting service for mobile apps, backends and other services but there are some miscellanous task that runs as background process for a particular action e.g. Compressing the image when an image is uploaded.</li>
+<li>WebJobs can help with these task in 2 manner</li>
+<li>Continuous - Keeps running the job </li>
+<li>Triggered - Must be triggered or scheduled</li>
+<li>WebJobs has few limitations, it only supports ASP.NET / SDK 2.x; however SDK 3.x supports .NET Core.</li>
+<li>WebJobsSDK can only be used with .NET languages.</li>
+</ul>
+</li>
+<li>
+<h4 id="azure-functions">Azure Functions</h4>
+<ul>
+<li>Another way to write code for triggered based events</li>
+<li>Supports many languages than WebJobs / WebJobs SDK</li>
+<li>You pay for time your code runs</li>
+<li>Code can be hosted on SCM </li>
+<li>Integrate within Azure and Third parties</li>
+<li>Azure Function could be hosted in 3 pricing tiers </li>
+<li>Consumption (Cold Starts)<ul>
+<li>Default hosting plan</li>
+<li>Automatic scalling </li>
+</ul>
+</li>
+<li>Premium (Pre warmed)<ul>
+<li>Provides more control over the compute resource that could be used</li>
+<li>Max execution time</li>
+<li>Provides virtual network connectivity</li>
+<li>Support to run function on the custom linux image. </li>
+</ul>
+</li>
+<li>Dedicated (App Service) plan (VM Sharing)<ul>
+<li>Runs functions withing your app service plan, so no extra cost for runnign the azure functions</li>
+</ul>
+</li>
+<li>Types <ul>
+<li>HTTPTrigger - on http event</li>
+<li>TimerTrigger - Scheduled trigger</li>
+<li>BlobTrigger - When blob gets added to storage account</li>
+<li>CosmosDBTrigger - code excutes in response to updates in CosmosDB</li>
+</ul>
+</li>
+<li>Runtimes provided by the Azure Functions are Docker containers.</li>
+<li>Azure Function hosting - Windows vs Linux. Windows provide better experience in terms of features than Linux.</li>
+<li>
+<h4 id="creating-a-serveless-application">Creating a serveless application</h4>
+<ul>
+<li>
+<h4 id="function-app">Function App</h4>
+<ul>
+<li>A function hold in execution environment called function app</li>
+<li>A Function App is a container that specifies the operating system and resources, such as the memory, computing power, and disk space, for running an Azure function. Behind the scenes, an Azure Function App is a collection of one or more virtual machines (VMs) running a web server.</li>
+<li>A Function App may use these types of plan</li>
+<li>Consumption Plan<ul>
+<li>True Serverless since provides automatic scalling and bills only for running of the function and configurable timeout.</li>
+</ul>
+</li>
+<li>Azure App Service Plan <ul>
+<li>Function runs continuously on the VM and user's responsible for the application resource and ideal for continuosly running applications/functions</li>
+</ul>
+</li>
+<li>Storage account is required, gets used in loogin function executions and managing executions triggers, in the case of <strong>Consumption Plan</strong>, code and configuration file is stored in it.</li>
+<li>Triggers</li>
+<li>Functions are event driven, which means they run in response to an event. The type of event that starts a function is called a trigger. <strong>Each function must be configured with exactly one trigger</strong>.</li>
+<li>Bindings</li>
+<li>A binding is a declarative way to connect data and services to your function. Bindings interact with various data sources, which means you don't have to write the code in your function to connect to data sources and manage connections--the platform takes care of that complexity for you as part of the binding code. Each binding has a direction--your code reads data from input bindings, and writes data to output bindings. Each function can have zero or more bindings to manage sthe input and output data processed by the function.</li>
+<li>Input bindings are the data sources that will be passed to function when it gets triggered.</li>
+<li>Trigger is type of an input binding.</li>
+<li>Timer trigger</li>
+<li><img alt="image" src="https://user-images.githubusercontent.com/36666451/144472301-a888bd70-f994-427e-b151-73f245d6555d.png" /></li>
+<li>Azure Functions requires Storage Account</li>
+<li>
+<p><strong>Azure Storage</strong> is Microsoft's cloud storage solution that supports all types of data, including: blobs, queues, and NoSQL.</p>
+</li>
+<li>
+<p><strong>Azure Blob Storage</strong> is a solution to store unstructured data which can be appended as well. Useful for log files which is being constantly appended. Blob Storage is great at storing text or binary files.</p>
+</li>
+<li>
+<p><strong>Azure Files</strong> also can be used by Azure Functions</p>
+</li>
+<li>
+<p>In an <strong>Azure Cosmos DB</strong>, a container is used to store a variety of user-generated entities, also called items.</p>
+</li>
+</ul>
+</li>
+<li>
+<h4 id="durable-functions">Durable functions</h4>
+<ul>
+<li>Unlike Functions, Durable functions operates in stateful environment.</li>
+<li>Event driven code e.g. can wait asynchronously for events and perform task in response</li>
+<li>Can be chained together and be ordered</li>
+<li>
+<p>Has orchestration function, which manages workflows (directly coded)</p>
+<ul>
+<li>Functions could be both sync and async</li>
+<li>State preserve and resource saving is done when function seats idle/waits</li>
+</ul>
+</li>
+<li>
+<p>Functions Types </p>
+<ul>
+<li>
+<p><strong>Client functions</strong> are the entry point for creating an instance of a Durable Functions orchestration. They can run in response to an event from many sources, such as a new HTTP request arriving, a message being posted to a message queue, an event arriving in an event stream. You can write them in any of the supported languages.</p>
+</li>
+<li>
+<p><strong>Orchestrator functions</strong> describe how actions are executed, and the order in which they are run. You write the orchestration logic in code (C# or JavaScript).</p>
+</li>
+<li>
+<p>Activity functions are the basic units of work in a durable function orchestration. An activity function contains the actual work performed by the tasks being orchestrated.</p>
+</li>
+<li>
+<p>Orchestrator will call the activity functions.</p>
+</li>
+<li>
+<p>Orchestrator must always call deteministic APIs which returns same output for same input, no matter how often they are called.</p>
+</li>
+<li>
+<p>Output from the called function can be saved to a variable, which will still hold data even if process recycles or VM reboots. 
+This is what I understand from a function being stateful in nature. Hence local state is never lost. </p>
+</li>
+</ul>
+</li>
+<li>
+<p>Patterns of Durable functions</p>
+<ul>
+<li>Function chaining<ul>
+<li>Output of the a function is input to the another function
+Fan-out/fan-in</li>
+<li>Executing multiple function in parallel and waiting for all of them to finish</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h5 id="authorization-on-the-azure-functions">Authorization on the Azure Functions</h5>
+<ul>
+<li>Anonymous <ul>
+<li>Anyone can request the API endpoint</li>
+</ul>
+</li>
+<li>Function<ul>
+<li>Function key required to authorize the request sent to Azure Functions. Function specific.</li>
+</ul>
+</li>
+<li>Admin<ul>
+<li>Same as function but has overall access.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h4 id="azure-functions-core-tools">Azure Functions Core Tools</h4>
+<ul>
+<li>Let's you develop and run function on your local environment</li>
+</ul>
+</li>
+<li>
+<p><strong>function.json</strong> contains bindings, triggers and other configurational information.</p>
+</li>
+<li><strong>hosts.json</strong> contains global configurations options for all the functions within function app.</li>
+<li><strong>Custom Handlers</strong> are light weight webserver. These based upon languages which supports HTTP primitives. In simpler words, languages which are not part of azure. This is an executable. It is required to maintain a folder structure with follwoing files</li>
+<li>hosts.json</li>
+<li>local.settings.json</li>
+<li>an executable - handler.exe</li>
+<li>it should server http request</li>
+<li>function.json</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+      
+    
+  </body>
+</html>
