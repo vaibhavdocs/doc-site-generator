@@ -27,9 +27,10 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: 'vaibhavdocs/Azure'
-          path: 'Azure'
+          path: "$GITHUB_WORKSPACE/docs/Azure"
       # Runs a set of commands using the runners shell
       - name: Mkdocs installation & Build
         run: |
+          ls -lra
           pip install mkdocs
           mkdocs gh-deploy --force
