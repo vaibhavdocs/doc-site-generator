@@ -28,6 +28,30 @@ jobs:
         with:
           repository: 'vaibhavdocs/Azure'
           path: "docs/Azure"
+      - uses: actions/checkout@v3
+        with:
+          repository: 'vaibhavdocs/AWS'
+          path: "docs/AWS"
+      - uses: actions/checkout@v3
+        with:
+          repository: 'vaibhavdocs/k8s'
+          path: "docs/k8s"
+      - uses: actions/checkout@v3
+        with:
+          repository: 'vaibhavdocs/destruct-auth'
+          path: "docs/destruct-auth"
+      - uses: actions/checkout@v3
+        with:
+          repository: 'vaibhavdocs/pluralsight-java'
+          path: "docs/pluralsight-java"
+      - uses: actions/checkout@v3
+        with:
+          repository: 'vaibhavdocs/pluralsight-js'
+          path: "docs/pluralsight-js"
+      - uses: actions/checkout@v3
+        with:
+          repository: 'vaibhavdocs/Golearn'
+          path: "docs/Golearn"
       # Runs a set of commands using the runners shell
       - name: Mkdocs installation & Build
         run: |
