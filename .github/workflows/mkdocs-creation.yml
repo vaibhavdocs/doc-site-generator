@@ -57,4 +57,5 @@ jobs:
         run: |
           ls -lra
           pip install mkdocs
+          pip install mkdocs-terminal
           mkdocs gh-deploy --force
