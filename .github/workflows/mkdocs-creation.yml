@@ -57,5 +57,5 @@ jobs:
         run: |
           ls -lra
           pip install mkdocs
-          pip install -U mkdocs-simple-blog
+          pip install mkdocs-material
           mkdocs gh-deploy --force
